@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Poppins, Lato } from "next/font/google";
 import { Suspense } from "react";
+import Footer from "@/components/layout/footer";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
             >
                 <Suspense>
                     {children}
+                    <Footer/>
                 </Suspense>
             </body>
         </html>
