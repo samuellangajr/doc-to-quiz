@@ -1,4 +1,5 @@
 import InputFile from "@/components/inputFile";
+import Loader from "@/components/loader";
 export default function Home() {
     return (
         <main className="py-20">
@@ -11,6 +12,9 @@ export default function Home() {
             <section>
                 <InputFile />
             </section>
+            <div className="mt-10">
+                <Loader />
+            </div>
         </main>
     );
 }
