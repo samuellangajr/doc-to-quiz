@@ -26,7 +26,6 @@ async function run() {
   ];
 
   const generatedContent = await model.generateContent([prompt, ...imageParts]);
-  
   console.log(generatedContent.response.text());
 }
 
