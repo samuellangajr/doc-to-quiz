@@ -1,5 +1,6 @@
+import { useState } from "react";
 import BackButton from "@components/buttons/backButton";
-import GoButton from "@components/buttons/goButton";
+import GenerateButton from "@/components/buttons/generateButton";
 
 interface QuizData {
     question: string;
@@ -12,6 +13,14 @@ interface QuizFormProps {
 }
 
 const QuizForm: React.FC<QuizFormProps> = ({ quizData }) => {
+    const [selectedOption, setSelectedOption] = useState<string | null>(null);
+    const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+
+    const handleOptionClick = (option: string) => {
+        setSelectedOption(option);
+        setIsCorrect(option === quizData.answer);
+    };
+
     return (
         <div className="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl mt-10">
             <div className="md:flex">
@@ -28,16 +37,25 @@ const QuizForm: React.FC<QuizFormProps> = ({ quizData }) => {
                             {quizData.options.map((option, index) => (
                                 <div
                                     key={index}
-                                    className="p-2 border rounded-md shadow-md mb-2 cursor-pointer hover:border-2 hover:border-green-400 text-sm"
+                                    onClick={() => handleOptionClick(option)}
+                                    className={`p-2 border rounded-md shadow-md mb-2 cursor-pointer text-sm ${
+                                        selectedOption
+                                            ? option === quizData.answer
+                                                ? "border-2 border-green-400"
+                                                : option === selectedOption
+                                                ? "border-2 border-red-400"
+                                                : "border"
+                                            : "hover:border-2 hover:border-gray-400"
+                                    }`}
                                 >
-                                    <p className="text-justify">{option}</p>
+                                    <p>{option}</p>
                                 </div>
                             ))}
                         </div>
                         {/* Actions */}
                         <div className="flex justify-between mt-6">
                             <BackButton />
-                            <GoButton />
+                            <GenerateButton />
                         </div>
                     </div>
                 </div>
