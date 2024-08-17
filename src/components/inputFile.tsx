@@ -1,6 +1,20 @@
+"use client";
+import { ChangeEvent } from "react";
 import folder from "@images/folder.png";
 import Image from "next/image";
-const InputFile: React.FC = () => {
+
+interface InputFileProps {
+    onFileUpload: (file: File) => void;
+}
+
+const InputFile: React.FC<InputFileProps> = ({ onFileUpload }) => {
+    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            onFileUpload(file);
+        }
+    };
+
     return (
         <div className="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl mt-10">
             <div className="md:flex">
@@ -15,14 +29,14 @@ const InputFile: React.FC = () => {
                                     height={50}
                                 />
                                 <span className="block text-gray-500 font-normal">
-                                    Attach you files here
+                                    Attach your files here
                                 </span>
                             </div>
                         </div>
                         <input
                             type="file"
                             className="cursor-pointer h-full w-full opacity-0"
-                            name=""
+                            onChange={handleFileChange}
                         />
                     </div>
                 </div>
