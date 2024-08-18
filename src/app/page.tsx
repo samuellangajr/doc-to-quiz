@@ -49,36 +49,23 @@ export default function Home() {
                 </span>
             </h1>
             {!loading && !quizData && !error && (
-                <section>
-                    <InputFile onFileUpload={handleFileUpload} />
-                </section>
+                <InputFile onFileUpload={handleFileUpload} />
             )}
 
-            {loading && (
-                <section>
-                    <Loader />
-                </section>
-            )}
+            {loading && 
+                <Loader />
+            }
             {error && (
-                <section>
-                    <div className="flex flex-col items-center pt-20 pb-10">
-                        <Image
-                            src={errorImg}
-                            alt="files"
-                            width={50}
-                            height={50}
-                        />
-                        <span className="font-bold text-center text-red-500">
-                            {error}
-                        </span>
-                    </div>
+                <section className="flex flex-col items-center pt-20 pb-10">
+                    <Image src={errorImg} alt="files" width={50} height={50} />
+                    <span className="font-bold text-center text-red-500">
+                        {error}
+                    </span>
                 </section>
             )}
-            {quizData && (
-                <section>
-                    <QuizForm quizData={quizData} />
-                </section>
-            )}
+            {quizData &&
+                <QuizForm quizData={quizData} 
+             />}
         </main>
     );
 }

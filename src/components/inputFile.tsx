@@ -16,7 +16,7 @@ const InputFile: React.FC<InputFileProps> = ({ onFileUpload }) => {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-10 overflow-hidden rounded-lg md:max-w-xl">
+        <section className="max-w-md mx-auto mt-10 overflow-hidden rounded-lg md:max-w-xl">
             <div className="md:flex">
                 <div className="w-full p-3">
                     <div className="relative flex items-center justify-center h-48 bg-white border-2 border-green-500 border-dotted rounded-lg">
@@ -41,7 +41,7 @@ const InputFile: React.FC<InputFileProps> = ({ onFileUpload }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
