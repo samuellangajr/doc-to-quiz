@@ -21,6 +21,8 @@ const QuizForm: React.FC<QuizFormProps> = ({ quizData }) => {
         setIsCorrect(option === quizData.answer);
     };
 
+    const optionLetters = ["A", "B", "C", "D"];
+
     return (
         <section className="max-w-md mx-auto mt-10 overflow-hidden rounded-lg md:max-w-xl">
             <div className="md:flex">
@@ -48,7 +50,12 @@ const QuizForm: React.FC<QuizFormProps> = ({ quizData }) => {
                                             : "hover:border-2 hover:border-gray-400"
                                     }`}
                                 >
-                                    <p>{option}</p>
+                                    <p>
+                                        <span className="mr-2 font-semibold">
+                                            {optionLetters[index]}.
+                                        </span>
+                                        {option}
+                                    </p>
                                 </div>
                             ))}
                         </div>
