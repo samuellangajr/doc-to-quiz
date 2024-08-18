@@ -9,13 +9,10 @@ export default function Home() {
     const [loading, setLoading] = useState<boolean>(false);
     const [quizData, setQuizData] = useState<any>(null);
     const [error, setError] = useState<string | null>(null);
-    const [file, setFile] = useState<File | null>(null); // Save selected file
 
     const handleFileUpload = async (file: File) => {
         setLoading(true);
         setError(null);
-        setQuizData(null);
-        setFile(file); //store selected file
 
         const formData = new FormData();
         formData.append("file", file);
@@ -64,7 +61,6 @@ export default function Home() {
             {quizData && (
                 <QuizForm
                     quizData={quizData}
-                    onGenerateMore={() => handleFileUpload(file!)}
                 />
             )}
             <section className="flex flex-col justify-center items-center mt-6">

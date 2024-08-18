@@ -10,10 +10,9 @@ interface QuizData {
 
 interface QuizFormProps {
     quizData: QuizData;
-    onGenerateMore: () => void; 
 }
 
-const QuizForm: React.FC<QuizFormProps> = ({ quizData, onGenerateMore }) => {
+const QuizForm: React.FC<QuizFormProps> = ({ quizData}) => {
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
@@ -63,7 +62,7 @@ const QuizForm: React.FC<QuizFormProps> = ({ quizData, onGenerateMore }) => {
                         {/* Actions */}
                         <section className="flex justify-between mt-6">
                             <BackButton />
-                            <GenerateButton onClick={onGenerateMore} />
+                            <GenerateButton/>
                         </section>
                     </div>
                 </div>
