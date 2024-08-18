@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
-import errorImg from "@images/error.png";
 import InputFile from "@/components/inputFile";
 import Loader from "@/components/loader";
 import QuizForm from "@/components/quizForm";
