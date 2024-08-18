@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa";
 const Footer: React.FC = () => {
     return (
         <footer>
-            <div className="flex flex-col md:flex-row items-center justify-center px-8 md:px-20 py-8 md:py-10 space-y-4 md:space-y-0 md:space-x-8 text-sm ">
+            <div className="flex flex-col items-center justify-center px-8 py-8 space-y-4 text-sm md:flex-row md:px-20 md:py-10 md:space-y-0 md:space-x-8 ">
                 <div className="flex space-x-2">
                     <FaGithub size={20} />
                     <Link

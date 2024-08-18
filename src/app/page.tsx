@@ -42,9 +42,9 @@ export default function Home() {
     };
     return (
         <main className="pt-20">
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-black text-center">
+            <h1 className="text-xl font-bold text-center text-black sm:text-2xl md:text-3xl">
                 Convert files into{" "}
-                <span className="text-white border p-2 sm:p-3 bg-green-400 rounded-lg">
+                <span className="p-2 text-white bg-green-400 border rounded-lg sm:p-3">
                     Quizzes
                 </span>
             </h1>
@@ -68,7 +68,7 @@ export default function Home() {
                             width={50}
                             height={50}
                         />
-                        <span className="text-red-500 text-center font-bold">
+                        <span className="font-bold text-center text-red-500">
                             {error}
                         </span>
                     </div>

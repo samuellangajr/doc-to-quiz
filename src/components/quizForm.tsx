@@ -22,13 +22,13 @@ const QuizForm: React.FC<QuizFormProps> = ({ quizData }) => {
     };
 
     return (
-        <div className="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl mt-10">
+        <div className="max-w-md mx-auto mt-10 overflow-hidden rounded-lg md:max-w-xl">
             <div className="md:flex">
                 <div className="w-full p-3">
-                    <div className="p-6 rounded-lg border-2 bg-white">
+                    <div className="p-6 bg-white border-2 rounded-lg">
                         {/* Question */}
                         <div>
-                            <h2 className="text-justify font-semibold">
+                            <h2 className="font-semibold text-justify">
                                 {quizData.question}
                             </h2>
                         </div>
