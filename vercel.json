@@ -1,7 +1,7 @@
 {
     "functions": {
-        "app/api/gemini/route.tsx": {
-            "maxDuration": 30
+        "src/app/api/**/*": {
+            "maxDuration": 60
         }
     }
 }
