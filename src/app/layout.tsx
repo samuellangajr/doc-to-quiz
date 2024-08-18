@@ -2,6 +2,7 @@ import "./globals.css";
 import { Poppins, Lato } from "next/font/google";
 import { Suspense } from "react";
 import Footer from "@/components/layout/footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -27,7 +28,8 @@ export default function RootLayout({
             >
                 <Suspense>
                     {children}
-                    <Footer/>
+                    <Analytics />
+                    <Footer />
                 </Suspense>
             </body>
         </html>
