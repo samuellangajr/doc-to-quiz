@@ -36,6 +36,7 @@ const InputFile: React.FC<InputFileProps> = ({ onFileUpload }) => {
                         <input
                             type="file"
                             className="w-full h-full opacity-0 cursor-pointer"
+                            accept=".pdf, image/*"
                             onChange={handleFileChange}
                         />
                     </div>

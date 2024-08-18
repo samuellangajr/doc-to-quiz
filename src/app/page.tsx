@@ -70,6 +70,11 @@ export default function Home() {
                     onGenerateMore={() => handleFileUpload(file!)}
                 />
             )}
+            <section className="flex justify-center items-center mt-6">
+                <p className="text-gray-600 text-xs">
+                    <span className="font-semibold">Note: </span>Only PDF files and Images are accepted.
+                </p>
+            </section>
         </main>
     );
 }
