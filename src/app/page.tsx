@@ -5,6 +5,7 @@ import errorImg from "@images/error.png";
 import InputFile from "@/components/inputFile";
 import Loader from "@/components/loader";
 import QuizForm from "@/components/quizForm";
+import ErrorDisplay from "@/components/error";
 
 export default function Home() {
     const [loading, setLoading] = useState<boolean>(false);
@@ -51,19 +52,17 @@ export default function Home() {
                     Quizzes
                 </span>
             </h1>
+            {/* Input file submit*/}
             {!loading && !quizData && !error && (
                 <InputFile onFileUpload={handleFileUpload} />
             )}
-
+            {/* Loading*/}
             {loading && <Loader />}
-            {error && (
-                <section className="flex flex-col items-center pt-20 pb-10">
-                    <Image src={errorImg} alt="files" width={50} height={50} />
-                    <span className="font-bold text-center text-red-500">
-                        {error}
-                    </span>
-                </section>
-            )}
+
+            {/* Error*/}
+            {error && <ErrorDisplay error={error} />}
+
+            {/* Quiz forrm*/}
             {quizData && (
                 <QuizForm
                     quizData={quizData}
@@ -72,7 +71,8 @@ export default function Home() {
             )}
             <section className="flex justify-center items-center mt-6">
                 <p className="text-gray-600 text-xs">
-                    <span className="font-semibold">Note: </span>Only PDF files and Images are accepted.
+                    <span className="font-semibold">Note: </span>Only PDF files
+                    and Images are accepted.
                 </p>
             </section>
         </main>
