@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
+import errorImg from "@images/error.png";
 import InputFile from "@/components/inputFile";
 import Loader from "@/components/loader";
 import QuizForm from "@/components/quizForm";
@@ -22,7 +24,7 @@ export default function Home() {
                 body: formData,
             });
 
-            if (!res.ok) throw new Error("Failed to fetch");
+            if (!res.ok) throw new Error("Something went wrong");
 
             const result = await res.json();
             if (result.error) {
@@ -59,7 +61,17 @@ export default function Home() {
             )}
             {error && (
                 <section>
-                    <p className="text-red-500 text-center">{error}</p>
+                    <div className="flex flex-col items-center pt-20 pb-10">
+                        <Image
+                            src={errorImg}
+                            alt="files"
+                            width={50}
+                            height={50}
+                        />
+                        <span className="text-red-500 text-center font-bold">
+                            {error}
+                        </span>
+                    </div>
                 </section>
             )}
             {quizData && (
